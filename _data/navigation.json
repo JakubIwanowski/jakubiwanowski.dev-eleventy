@@ -1,0 +1,18 @@
+[
+    {
+        "label": "Home",
+        "href": "/"
+    },
+    {
+        "label": "Blog",
+        "href": "/blog/"
+    },
+    {
+        "label": "Contact",
+        "href": "mailto:jakub.iwanowski@tutanota.com"
+    },
+    {
+        "label": "RSS",
+        "href": "/blog/posts.rss"
+    }
+]

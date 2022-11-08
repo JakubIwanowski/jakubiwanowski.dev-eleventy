@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="https://jakubiwanowski.dev/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>jakubiwanowski.dev</title>
+ <link>https://jakubiwanowski.dev/</link>
+      <atom:link href="https://jakubiwanowski.dev/blog/posts.rss" rel="self" type="application/rss+xml" />
+      <description>Blog of a frontend developer, Jakub Iwanowski</description>
+      <language>en</language>
+      <item>
+        <title>Wrapping Up Divtober</title>
+        <link>https://jakubiwanowski.dev/blog/wrapping-up-divtober/</link>
+        <description>&lt;h1&gt;Wrapping Up Divtober&lt;/h1&gt;
+&lt;p&gt;Divtober came to an end. it was challenging, but it also gave me a lot of satisfaction. It was a great chance to hone your CSS skills, and to get to know&lt;br /&gt;
+great developers. Looking at other people&#39;s work, admiring it, and learning from it was a fantastic experience. You should check out what they made:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/lynnandtonic&quot; target=&quot;_blank&quot;&gt;Lynn Fisher&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/alvaro_montoro&quot; target=&quot;_blank&quot;&gt;Álvaro Montoro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/ChallengesCss&quot; target=&quot;_blank&quot;&gt;Temani Afif&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/robleto&quot; target=&quot;_blank&quot;&gt;Greg Robleto&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/DevMaxew&quot; target=&quot;_blank&quot;&gt;Maxime Malfilâtre&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And here are some of my favourite drawings that I made:&lt;/p&gt;
+&lt;h2&gt;3. Snack&lt;/h2&gt;
+&lt;p class=&quot;codepen&quot; data-height=&quot;500&quot; data-slug-hash=&quot;ZEoRBPx&quot; data-user=&quot;dzajew&quot; style=&quot;height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/dzajew/pen/ZEoRBPx&quot;&gt;
+  Divtober #3: Snack&lt;/a&gt; by Dzajew (&lt;a href=&quot;https://codepen.io/dzajew&quot;&gt;@dzajew&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io/&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://cpwebassets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;
+&lt;h2&gt;12. Shadow&lt;/h2&gt;
+&lt;p class=&quot;codepen&quot; data-height=&quot;500&quot; data-default-tab=&quot;result&quot; data-slug-hash=&quot;oNdJRdL&quot; data-user=&quot;dzajew&quot; style=&quot;height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/dzajew/pen/oNdJRdL&quot;&gt;
+  Divtober #12: Shadow&lt;/a&gt; by Dzajew (&lt;a href=&quot;https://codepen.io/dzajew&quot;&gt;@dzajew&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io/&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;br /&gt;
+&lt;h2&gt;16. Hypnotic&lt;/h2&gt;
+&lt;p class=&quot;codepen&quot; data-height=&quot;500&quot; data-default-tab=&quot;result&quot; data-slug-hash=&quot;qBYwWNL&quot; data-user=&quot;dzajew&quot; style=&quot;height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/dzajew/pen/qBYwWNL&quot;&gt;
+  Divtober #16: Hypnotic&lt;/a&gt; by Dzajew (&lt;a href=&quot;https://codepen.io/dzajew&quot;&gt;@dzajew&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io/&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;br /&gt;
+&lt;h2&gt;17. Stripes&lt;/h2&gt;
+&lt;p class=&quot;codepen&quot; data-height=&quot;500&quot; data-default-tab=&quot;result&quot; data-slug-hash=&quot;qBYwMVP&quot; data-user=&quot;dzajew&quot; style=&quot;height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/dzajew/pen/qBYwMVP&quot;&gt;
+  Divtober #17: stripes&lt;/a&gt; by Dzajew (&lt;a href=&quot;https://codepen.io/dzajew&quot;&gt;@dzajew&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io/&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;br /&gt;
+&lt;h1&gt;22. Soft&lt;/h1&gt;
+&lt;p class=&quot;codepen&quot; data-height=&quot;500&quot; data-default-tab=&quot;result&quot; data-slug-hash=&quot;poKzEXY&quot; data-user=&quot;dzajew&quot; style=&quot;height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/dzajew/pen/poKzEXY&quot;&gt;
+  Divtober #22: Soft&lt;/a&gt; by Dzajew (&lt;a href=&quot;https://codepen.io/dzajew&quot;&gt;@dzajew&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io/&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;br /&gt;
+&lt;h2&gt;25. Luminous&lt;/h2&gt;
+&lt;p class=&quot;codepen&quot; data-height=&quot;500&quot; data-default-tab=&quot;result&quot; data-slug-hash=&quot;mdKdjVz&quot; data-user=&quot;dzajew&quot; style=&quot;height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/dzajew/pen/mdKdjVz&quot;&gt;
+  Divtober #25: Luminous&lt;/a&gt; by Dzajew (&lt;a href=&quot;https://codepen.io/dzajew&quot;&gt;@dzajew&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io/&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;br /&gt;
+&lt;h2&gt;27. Grain&lt;/h2&gt;
+&lt;p class=&quot;codepen&quot; data-height=&quot;500&quot; data-default-tab=&quot;result&quot; data-slug-hash=&quot;ExRVYYd&quot; data-user=&quot;dzajew&quot; style=&quot;height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/dzajew/pen/ExRVYYd&quot;&gt;
+  Divtober #27: Grain&lt;/a&gt; by Dzajew (&lt;a href=&quot;https://codepen.io/dzajew&quot;&gt;@dzajew&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io/&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;br /&gt;
+&lt;h2&gt;29. Free&lt;/h2&gt;
+&lt;p class=&quot;codepen&quot; data-height=&quot;500&quot; data-default-tab=&quot;result&quot; data-slug-hash=&quot;qBKOErY&quot; data-user=&quot;dzajew&quot; style=&quot;height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/dzajew/pen/qBKOErY&quot;&gt;
+  Divtober #29: Free&lt;/a&gt; by Dzajew (&lt;a href=&quot;https://codepen.io/dzajew&quot;&gt;@dzajew&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io/&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;br /&gt;
+&lt;h2&gt;30. Beloved&lt;/h2&gt;
+&lt;p class=&quot;codepen&quot; data-height=&quot;500&quot; data-default-tab=&quot;result&quot; data-slug-hash=&quot;eYKJppX&quot; data-user=&quot;dzajew&quot; style=&quot;height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/dzajew/pen/eYKJppX&quot;&gt;
+  Divtober #30: Beloved&lt;/a&gt; by Dzajew (&lt;a href=&quot;https://codepen.io/dzajew&quot;&gt;@dzajew&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io/&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;I met some amazing people, and certainly learned a lot from them. For me, one of the hardest parts of the challenge was to figure out where a line or shape should go.&lt;br /&gt;
+Hopefully, I got better. I&#39;m looking for the next year&#39;s divtober, and if you hesitated to take part in the 2022&#39;s edition, I hope you&#39;ll join us next time. So much fun!&lt;/p&gt;
+</description>
+        <pubDate>Thu Nov 03 2022 01:00:00 GMT+0100 (czas środkowoeuropejski standardowy)</pubDate>
+        <dc:creator>Jakub Iwanowski</dc:creator>
+        <guid>https://jakubiwanowski.dev/blog/wrapping-up-divtober/</guid>
+      </item>
+      <item>
+        <title>Divtober #1</title>
+        <link>https://jakubiwanowski.dev/blog/divtober-badge/</link>
+        <description>&lt;h1&gt;Divtober&lt;/h1&gt;
+&lt;p&gt;A few days ago I stumbled into &lt;a href=&quot;https://twitter.com/lynnandtonic&quot; target=&quot;_blank&quot;&gt;Lynn Fishers&#39;s&lt;/a&gt; post about divtober. The challenge is to&lt;br /&gt;
+create an illustration with a single div and CSS only. Each day of October has a different topic/subject. You can read more about it on &lt;a href=&quot;https://a.singlediv.com/divtober2022/&quot;&gt;the event&#39;s page&lt;/a&gt;.&lt;br /&gt;
+I&#39;ve decided to challenge myself, and give it a try. Hopefully, I&#39;ll manage to complete all the tasks. You can see some of people&#39;s works from this and previous&lt;br /&gt;
+years, if you follow the &amp;quot;divtober&amp;quot; hashtag on Twitter. I think it&#39;s a great way to test and hone your&lt;br /&gt;
+CSS skills, and what&#39;s more important, to have some fun.&lt;/p&gt;
+&lt;p&gt;Here&#39;s my first illustration, &amp;quot;Badge&amp;quot; - &lt;a href=&quot;https://codepen.io/dzajew/pen/oNddZbG&quot; target=&quot;_blank&quot;&gt;https://codepen.io/dzajew/pen/oNddZbG&lt;/a&gt;.&lt;br /&gt;
+And a second one, &amp;quot;Dry&amp;quot; - &lt;a href=&quot;https://codepen.io/dzajew/pen/ExLLXgq&quot; target=&quot;_blank&quot;&gt;https://codepen.io/dzajew/pen/ExLLXgq&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sun Oct 02 2022 02:00:00 GMT+0200 (czas środkowoeuropejski letni)</pubDate>
+        <dc:creator>Jakub Iwanowski</dc:creator>
+        <guid>https://jakubiwanowski.dev/blog/divtober-badge/</guid>
+      </item>
+      <item>
+        <title>On work</title>
+        <link>https://jakubiwanowski.dev/blog/on-work/</link>
+        <description>&lt;h1&gt;On work&lt;/h1&gt;
+&lt;p&gt;Work can be hard, work can be exhausting, but it can also be fun. Being a programmer means constantly having to learn new things, which is one of the reasons&lt;br /&gt;
+I like this line of work. There are times, when I can&#39;t look at code anymore. All I want to do is turn off my PC, and my brain.&lt;/p&gt;
+&lt;p&gt;The frustration stemming from fixing a bug, and not being able to find a solution can be a great weight on my shoulders. Then, after a good night&#39;s sleep, a cog&lt;br /&gt;
+in my head moves, I find the missing puzzle piece. Suddenly, I feel like I could run a marathon (I couldn&#39;t). All worries go away, I can move on to the next task.&lt;br /&gt;
+Till I&#39;m stuck again.&lt;/p&gt;
+&lt;p&gt;It may seem that programmer&#39;s work is hardly a pleasant exercise. Sometimes it&#39;s the case, but more often than not, it gives me fullfilment. I can create &lt;em&gt;something&lt;/em&gt;&lt;br /&gt;
+from scratch, and if this something is useful, or entertaining, for at least one person, it was worth all the hard work I had to put in it.&lt;/p&gt;
+</description>
+        <pubDate>Sat Jul 02 2022 02:00:00 GMT+0200 (czas środkowoeuropejski letni)</pubDate>
+        <dc:creator>Jakub Iwanowski</dc:creator>
+        <guid>https://jakubiwanowski.dev/blog/on-work/</guid>
+      </item>
+      <item>
+        <title>The good, the bad, and the Oxford comma</title>
+        <link>https://jakubiwanowski.dev/blog/the-good-the-bad-and-the-oxford-comma/</link>
+        <description>&lt;h1&gt;The good, the bad, and the Oxford comma&lt;/h1&gt;
+&lt;p&gt;I&#39;ve been thinking about starting a blog for some time now. Actually, I already have one. It&#39;s in Polish and I&#39;ve posted there two articles.&lt;br /&gt;
+Not much, but better than nothing, I guess. Anywayyyy, the first thing I did was to think about how my blog would look like,&lt;br /&gt;
+what technology I&#39;d use, but then something came to my mind. I could browse through different framework, think about layout,&lt;br /&gt;
+design and so on. Unfortunately, that lead me to thinking instead of writing. Honestly, I could spend days,&lt;br /&gt;
+weeks thinking about the best colour palette. This would result in, probably, hopefully, I don&#39;t know what. A nicely coloured website?&lt;/p&gt;
+&lt;p&gt;So I decided that first things should come first, I&#39;ll start with my first blog post. At the moment of writing, I&#39;m using Notion for the draft. Only when I&#39;m finished, I&#39;ll sit down to coding. And if everything goes well, it won&#39;t be another abandonned blog.&lt;/p&gt;
+&lt;p&gt;Designing a website is hard, but what about frameworks? What&#39;s the best hosting provider? What should be my blog&#39;s name? What domain should I choose? So many choices, but all that matters in the end is either I write something or not.&lt;/p&gt;
+&lt;p&gt;I am subscribed to so many programming newsletters, which I don&#39;t have time to read regularly, but one of my favourties is &lt;strong&gt;&lt;a href=&quot;https://thehistoryoftheweb.com/&quot;&gt;The History of the Web&lt;/a&gt;&lt;/strong&gt; by Jay Hoffman. As its name suggests, it&#39;s about the history of the web.&lt;br /&gt;
+Each newsletter tells a story about a tiny part of the Internet.&lt;br /&gt;
+How it was invented, what services, communities there were; which of them are gone, and which transformed into something different. Just like dinosaurs transformed into chickens. Erhm..not exactly like that, but these are just details.&lt;/p&gt;
+&lt;p&gt;What makes my heart warm is the emerging here and there belief that Web was made for everyone. It was a  place for expressing your creativity. Just with HTML and CSS you could make your own web place, homepage.&lt;br /&gt;
+There were Geocities, I must admit I didn&#39;t know about them until recently, which enabled people with different backgrounds to create their own internet homes. Witkacy, an extravagant, to put it lightly, Polish artist from the interwar period, wrote that&lt;br /&gt;
+as long as you&#39;re sincere, honest while creating something, you can call this thing art. And I think that Geocities, and other websites of that time were art, because they showed expression of creativity of the people who made them.&lt;/p&gt;
+&lt;p&gt;I don&#39;t mean to say, that people nowadays don&#39;t make great things on the Web. They do. It&#39;s just that the old webistes give me feeling of unbashed creativity and fun. Like when you&#39;re a kid and not ashamed to make mistakes.&lt;/p&gt;
+&lt;p&gt;So why the blog? To have a place to share my less or more serious thoughts, to write about coding, to transform dinosaurs into chickens (not exactly).&lt;/p&gt;
+</description>
+        <pubDate>Sun Feb 27 2022 01:00:00 GMT+0100 (czas środkowoeuropejski standardowy)</pubDate>
+        <dc:creator>Jakub Iwanowski</dc:creator>
+        <guid>https://jakubiwanowski.dev/blog/the-good-the-bad-and-the-oxford-comma/</guid>
+      </item>
+    </channel>
+  </rss>

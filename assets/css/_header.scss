@@ -1,0 +1,24 @@
+.header {
+    padding: 2em 0;
+  }
+  .nav__list  {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 1em;
+  }
+  .nav__list__link {
+    color: var(--txt-color);
+    font-size: clamp(1.2em,2vw,2em);
+    padding: .5em .7em;
+    text-decoration-color: var(--link-color);
+    border-radius: 8px;
+    &:hover {
+      background-color: var(--nav-hover-color);
+    }
+    
+    &.active {
+      background-color: var(--nav-hover-color);
+    }
+  }

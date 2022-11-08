@@ -1,0 +1,14 @@
+<header class="header">
+    <div class="container">
+      <nav class="nav">
+        <ul class="nav__list">
+  {%- for nav in navigation -%} 
+          {% set regExp = r/\b(blog)\b/i %}
+  <li class="nav__list__el">
+    <a href="{{ nav.href }}" class="nav__list__link {% if page.url == nav.href or (regExp.test(page.url) === true and nav.href === '/blog/') %}active{% endif %}">{{ nav.label }}</a>
+  </li>  
+  {%- endfor -%}  
+        </ul>
+      </nav>
+    </div>
+</header>
