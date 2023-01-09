@@ -8,14 +8,15 @@
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "watch:sass": "npx sass assets/css:_site/assets/css/ --watch",
     "start": "npm run watch:eleventy & npm run watch:sass",
-    "build": "npx @11ty/eleventy"
+    "eleventy build": "npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-plugin-rss": "^1.2.0"
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0"
   },
   "dependencies": {
     "sass": "^1.56.0"

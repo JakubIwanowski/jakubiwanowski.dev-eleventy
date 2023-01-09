@@ -161,6 +161,9 @@ a:hover {
   left: 0;
   background-image: linear-gradient(to left, var(--link-color), hsl(122deg, 100%, 73%));
 }
+.post-content h2:not(:last-child) {
+  margin-bottom: 1em;
+}
 .post-content p:not(:last-child) {
   margin-bottom: 1em;
 }
