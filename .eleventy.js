@@ -1,10 +1,14 @@
 const markdownIt = require("markdown-it");
+const markdownItAttrs = require("markdown-it-attrs");
+const eleventySass = require("eleventy-sass");
+const postcss = require("postcss");
+const autoprefixer = require("autoprefixer");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 module.exports = function(eleventyConfig) {
-	eleventyConfig.setBrowserSyncConfig({
-		files: './_site/assets/css/**/*.css'
-	});
+	eleventyConfig.addPlugin(eleventySass, {
+    postcss: postcss([autoprefixer])
+  });
 	eleventyConfig.setTemplateFormats("html,liquid,njk,md");
 	eleventyConfig.addPassthroughCopy("assets/fonts");
 	eleventyConfig.addPassthroughCopy("assets/images");
@@ -13,8 +17,7 @@ module.exports = function(eleventyConfig) {
 		breaks: true,
 		linkify: true
 	  };
-	
-	  eleventyConfig.setLibrary("md", markdownIt(options));
+	  eleventyConfig.setLibrary("md", markdownIt(options).use(markdownItAttrs));
 	  eleventyConfig.addPlugin(pluginRss);
       eleventyConfig.addPlugin(syntaxHighlight);
 	  return {
