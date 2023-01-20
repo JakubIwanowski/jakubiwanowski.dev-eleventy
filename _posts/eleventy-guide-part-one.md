@@ -126,10 +126,11 @@ title: 'Example post'
 excerpt: 'Example excerpt'
 ---
 ```
+**Edit**: This is front matter. I haven't explained what it is in the previous version of the post, but I've written a bit more about this topic [in the next part of the guide](/blog/eleventy-guide-part-two#front-matter)
 Add ***_posts.json*** to our folder holding posts:
 ```json
 {
-  "permalink": "/blog/{{ page.fileSlug }}/index.html",
+  "permalink": "/blog/{% raw %}{{ page.fileSlug }}{% endraw %}/index.html",
   "tags": ["posts"]
 }
 ```
@@ -177,4 +178,4 @@ Just add link to the stylesheet in the `<head>`
 ```html
 <link rel="stylesheet" href="style.css">
 ```
-And that's all for today. In next parts I'll discuss adding layouts and Sass to our blog. Hopefully, what I wrote, and will write, will be helpful to someone. Do you have comments or suggestions? Feel free to send me an email (my address is in the navigation). You can also find me on Mastodon: **@dzajew@fosstodon.org**.
+And that's all for today. In the next parts of the guide I'll discuss adding layouts and Sass to our blog. Hopefully, what I wrote, and will write, will be helpful to someone. Do you have comments or suggestions? Feel free to send me an email (my address is in the navigation). You can also find me on Mastodon: [@dzajew@fosstodon.org](https://fosstodon.org/@dzajew){target=_blank}.

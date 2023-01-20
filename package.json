@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:eleventy": "npx @11ty/eleventy --serve",
-    "watch:sass": "npx sass assets/css:_site/assets/css/ --watch",
-    "start": "npm run watch:eleventy & npm run watch:sass",
+    "start": "npm run watch:eleventy",
     "eleventy build": "npx @11ty/eleventy"
   },
   "keywords": [],
@@ -19,6 +18,9 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0"
   },
   "dependencies": {
-    "sass": "^1.56.0"
+    "autoprefixer": "^10.4.13",
+    "eleventy-sass": "^2.1.6",
+    "markdown-it-attrs": "^4.1.6",
+    "postcss": "^8.4.21"
   }
 }
