@@ -2,8 +2,8 @@
 meta:
     title: "A Beginner's Guide to Eleventy - part tow"
     description: "Second part of a beginner's guide to eleventy"
-date: 2023-01-09
-dateDisplay: 09-01-2023
+date: 2023-01-20
+dateDisplay: 20-01-2023
 title: "A Beginner's Guide to Eleventy - part two"
 slug: "eleventy-guide-part-two"
 highlighter: true
