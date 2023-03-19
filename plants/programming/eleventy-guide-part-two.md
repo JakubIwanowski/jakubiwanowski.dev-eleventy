@@ -12,7 +12,7 @@ excerpt: "Layouts and Sass in Eleventy"
 
 # A Beginner's Guide to Eleventy - part two
 
-As I have said in [the previous part of our series](/garden/eleventy-guide-part-one), we'll talk today about Sass and layouts. Pure CSS is great, but sometimes you may need/want to use some extra features of Sass, so here's how you do it!.
+As I have said in [the previous part of our series](/garden/programming/eleventy-guide-part-one), we'll talk today about Sass and layouts. Pure CSS is great, but sometimes you may need/want to use some extra features of Sass, so here's how you do it!.
 ## Sass
 In order to add scss files to your project you can either use built in functions, Eleventy supports Sass out of the box, or install one of the many plugins. You can check out [Eleventy's documentation about adding Sass support](https://www.11ty.dev/docs/languages/custom/#example-add-sass-support-to-eleventy). In this guide we'll be using Kentaro Imai's plugin - [eleventy-sass](https://www.npmjs.com/package/eleventy-sass). It's just a matter of preference, Whatever option you'll choose, it'll be fine.
 ```bash 
