@@ -1,0 +1,10 @@
+# Redirects of old posts
+/blog/the-good-the-bad-and-the-oxford-comma/ /garden/thoughts/the-good-the-bad-and-the-oxford-comma/ 301
+/blog/on-work/ /garden/thoughts/on-work/ 301
+/blog/divtober-badge/ /garden/programming/divtober-badge/ 301
+/blog/wrapping-up-divtober/ /garden/programming/wrapping-up-divtober/ 301
+/blog/eleventy-guide-part-one/ /garden/programming/eleventy-guide-part-one/ 301
+/blog/eleventy-guide-part-two/ /garden/programming/eleventy-guide-part-two/ 301
+
+# RSS Feed
+/blog/posts.rss /garden/paths.rss 301

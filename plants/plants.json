@@ -1,0 +1,4 @@
+{
+  "permalink": "/garden/{{ page.fileSlug }}/index.html",
+  "layout": "postslayout.njk"
+}

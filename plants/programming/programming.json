@@ -1,0 +1,8 @@
+{
+  "permalink": "/garden/programming/{{ page.fileSlug }}/index.html",
+  "layout": "postslayout.njk",
+  "tags": [
+    "plants",
+    "programming"
+  ]
+}

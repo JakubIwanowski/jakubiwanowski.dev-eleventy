@@ -1,0 +1,13 @@
+:root {
+    --background-color: hsl(51, 100%, 50%);
+    --txt-color: hsl(287, 81%, 17%);
+    --link-color:var(--txt-color);
+    --link-focus: var(--nav-hover-color);
+    --nav-hover-color:hsl(346, 81%, 30%);
+	--font-0:clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+	--font-1: clamp(1.25rem,1.88rem + 0.31vw, 1.56rem);
+	--font-2: clamp(1.36rem,1.262rem + 0.49vw,1.85rem);
+	--font-3: clamp(1.55rem, 1.374rem + 0.88vw, 2.43rem);
+	--font-4: clamp(2rem, 1.8rem + 1.3vw , 3.03rem);
+  }
+

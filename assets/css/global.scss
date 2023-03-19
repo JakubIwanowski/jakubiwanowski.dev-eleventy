@@ -1,171 +1,144 @@
+@import "variables";
+@import "reset";
+@import "header";
 @font-face {
-  font-family: 'Open Sans';
-    src: url('../fonts/opensans-bold-webfont.woff2') format('woff2'),
-         url('../fonts/opensans-bold-webfont.woff') format('woff');
+  font-family: 'Space Mono';
+    src: url('../fonts/spacemono-bold-webfont.woff2') format('woff2'),
+         url('../fonts/spacemono-bold-webfont.woff') format('woff')
+	;
     font-weight: 700;
     font-style: normal;
     font-display:swap;
 
 }
 @font-face {
-  font-family: 'Oxygen';
-    src: url('../fonts/oxygen-webfont.woff2') format('woff2'),
-         url('../fonts/oxygen-webfont.woff') format('woff');
+  font-family: 'Figtree';
+    src: url(../fonts/figtree-regular-webfont.woff2) format('woff2'),
+		 url(../fonts/figtree-regular-webfont.woff) format('woff')
+	;
     font-weight: 400;
     font-style: normal;
     font-display:swap;
 
 }
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  html, body {
-    height: 100%;
-    scroll-behavior: smooth;
-  }
-
-  body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    background-color: var(--background-color);
-    color: var(--txt-color);
-    font-family: 'Oxygen', sans-serif;
-  }
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  input, button, textarea, select {
-    font: inherit;
-  }
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  #root {
-    isolation: isolate;
-  }
-  :root {
-    --background-color: hsl(0, 0%, 100%);
-    --txt-color: hsl(0, 3%, 12%);
-    --link-color:hsl(247.5, 60.9%, 63.9%);
-    --link-focus: hsl(247.5, 60.9%, 63.9%);
-    --nav-hover-color:hsla(256, 14%, 55%, 0.26);
-  }
-  main {
+main {
     padding: 2em 0;
-  }
-  h1 {
-    font-family: 'Open Sans';
-    font-size: clamp(2em,5vw,3em);
+}
+h1,h2,h3 {
+   font-family: "Space Mono", sans-serif;
+}
+h1 {
+    font-size: var(--font-4);
     margin-bottom: .5em;
-  }
-  h2 {
-    font-family: 'Open Sans';
-    font-size: clamp(1.8em,4vw,2.5em);
-  }
-  h3 {
-    font-family: 'Open Sans';
-    font-size: clamp(1.5em,3.2vw,2em);
+}
+h2 {
+    font-size: var(--font-3);
+}
+h3 {
+    font-size: var(--font-2);
     line-height: 2;
-  }
-  p {
-    font-size: clamp(1.2em,3vw,1.5em);
+}
+p {
+    font-size: clamp(1.2em,3vw,var(--font-1));
     line-height: 2;
-  }
-  ul,ol {
+}
+ul,ol {
     list-style-position: inside;
-  }
-  a {
+    font-size: var(--font-1);
+}
+a {
     padding: .2em 0;
     color: var(--link-color);
     overflow: hidden;
     &:focus {
-      outline:.1em dotted var(--link-focus);
-      border-radius: .02em;
+      outline:.15em dotted var(--link-focus);
     }
     &:hover {
-      outline:.1em dotted var(--link-focus);
-      border-radius: .02em;
+      outline:.15em dotted var(--link-focus);
     }
-  }
-  .container {
+}
+.container {
       max-width: 56.25em;
       width: 100%;
       margin: 0 auto;
       padding: 0 1em;
-  }
-  .intro{
+}
+.intro{
     margin-bottom: 2em;
-  }
-  .intro__p {
+}
+.intro__p {
     font-size: clamp(1.5em,3vw,1.8em);
-  }
-  .latest__title {
+}
+.latest__title {
     margin-bottom: 1em;
-  }
-  .post__list {
+}
+.post__list {
     list-style: none;
-  }
-  .post__list__el {
-    font-size: clamp(1.5em,3vw,1.8em);
+}
+.post__list__el {
     padding: 1em;
-    border-width: .1em;
-    border-style: solid;
-    border-image: linear-gradient(to left, var(--link-color), hsl(122, 100%, 73%));
-    border-image-slice: 1;
-    a {
+  	border: 3px solid var(--nav-hover-color);         
+	a {
       font-weight: 700;
       display: block;
     }
     &:not(:last-child) {
       margin-bottom: 1em;
     }
-  }
-  .post__date {
+}
+.post__date {
     font-size: .7em;
     margin-bottom: .5em;
-  }
-  .post-content {
+}
+.post-content {
     .post__date {
       font-size: 1.5em;
-    }
-    h1 {
-      position: relative;
-      margin-bottom: 1em;
+}
+&>* + * {
+		margin-block-start:var(--flow-space,1em);
+}
+:is(h1, h2, h3, blockquote) {
+  --flow-space: 1.5em;
+}
+
+:is(h1, h2, h3) + * {
+  --flow-space: 0.5em;
+}
+h1 {
+		margin-block-start: .5em;
       &:after{
         content: '';
         width: 100%;
         height: .06em;
-        position: absolute;
-        bottom: -.5em;
-        left: 0;
-        background-image: linear-gradient(to left, var(--link-color), hsl(122, 100%, 73%));;
-      }
-    }
-    h2 {
-        &:not(:last-child) {
-            margin-bottom:1em;
-        }
-    }
-    p {
-      &:not(:last-child) {
-        margin-bottom: 1em;
+		background-color: var(--nav-hover-color);
+		display: block;
+		margin-block-start: .5em;
       }
     }
     ul {
-      font-size: clamp(1.2em,3vw,1.5em);
       line-height: 2;
-    }
-    code:not([class]) {
-        color: #9d0006;
+      list-style-position: outside;
+      padding-inline-start: 2ch;
     }
   }
-  @import './header';
+  .squares {
+  --size: 2.5rem;
+  --color1: #31c9c6;
+  --color2: #fcbb30;
+  --color3: #eb3f67;
+  --color4: #8545d8;
+  --color5: #0f9ce2;
+  --color6: 31c9c6;
+  --color7: 31c9c6;
+  --color8: 31c9c6;
+  height:calc(2*var(--size));
+  width: 100%;
+  background:
+  linear-gradient(90deg, var(--color1) 0%,var(--color1) 12.5%,var(--color2)12.5%,var(--color2) 25%,var(--color3)25%,var(--color3)37.5%,var(--color4)37.5%,
+  var(--color4)50%,var(--color5)50%,var(--color5)62.5%,var(--color1)62.5%,var(--color1)75%,var(--color2)75%,var(--color2)87.5%,var(--color3)87.5%,var(--color3)100%),
+  linear-gradient(90deg, var(--color4) 0%,var(--color4) 12.5%,var(--color3)12.5%,var(--color3) 25%,var(--color5)25%,var(--color5)37.5%,var(--color1)37.5%,
+  var(--color1)50%,var(--color2)50%,var(--color2)62.5%,var(--color3)62.5%,var(--color3)75%,var(--color4)75%,var(--color4)87.5%,var(--color5)87.5%,var(--color5)100%);
+  background-size:calc(var(--size)*8)  var(--size),calc(var(--size)*8) var(--size);   
+  background-repeat: repeat no-repeat;
+  background-position:0 0, 0 var(--size);
+  }
