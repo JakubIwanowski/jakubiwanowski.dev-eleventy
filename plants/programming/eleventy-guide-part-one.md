@@ -126,7 +126,7 @@ title: 'Example post'
 excerpt: 'Example excerpt'
 ---
 ```
-**Edit**: This is front matter. I haven't explained what it is in the previous version of the post, but I've written a bit more about this topic [in the next part of the guide](/garden/eleventy-guide-part-two#front-matter)
+**Edit**: This is front matter. I haven't explained what it is in the previous version of the post, but I've written a bit more about this topic [in the next part of the guide](/garden/programming/eleventy-guide-part-two#front-matter)
 Add ***_posts.json*** to our folder holding posts:
 ```json
 {
