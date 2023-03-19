@@ -1,5 +1,6 @@
 .header {
-    padding: 2em 0;
+    padding: 32px 0;
+	background-color:hsl(287.1, 81.4%, 16.9%);
   }
   .nav__list  {
     display: flex;
@@ -9,16 +10,17 @@
     gap: 1em;
   }
   .nav__list__link {
-    color: var(--txt-color);
-    font-size: clamp(1.2em,2vw,2em);
+    color: var(--background-color);
+    font-size: var(--font-1);
     padding: .5em .7em;
-    text-decoration-color: var(--link-color);
-    border-radius: 8px;
+    text-decoration-color: var(--background-color);
     &:hover {
       background-color: var(--nav-hover-color);
+	  outline:0.15em dotted var(--background-color);
     }
     
     &.active {
       background-color: var(--nav-hover-color);
+	  outline:0.15em dotted var(--background-color);
     }
   }

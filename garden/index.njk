@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: "The Garden"
+description: "Digital Garden of Jakub Iwanowski"
+---
+ <section>
+             <div class="container">
+    <h1>{{ title }}</h1>
+            <ul class="post__list">
+                {%- for plant in collections.plants | reverse -%}
+                            <li
+                                class="post__list__el"
+                            >
+                                <div class="post__date">
+                                    {{plant.data.dateDisplay}}
+                                </div>
+                                <h3>
+                                <a href="{{plant.url}}">{{plant.data.title}}</a>
+                                </h3>
+                               {{plant.data.excerpt}}
+                            </li>
+
+                {%- endfor -%}
+            </ul>
+            </div>
+</section>

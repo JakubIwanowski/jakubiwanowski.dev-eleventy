@@ -1,0 +1,7 @@
+{
+  "permalink": "/garden/thoughts/{{ page.fileSlug }}/index.html",
+  "tags": [
+    "plants",
+    "thoughts"
+  ]
+}
