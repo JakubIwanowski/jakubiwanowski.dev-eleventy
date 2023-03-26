@@ -4,10 +4,29 @@ title: "The Garden"
 description: "Digital Garden of Jakub Iwanowski"
 ---
  <section>
-             <div class="container">
+             <div class="container flow">
     <h1>{{ title }}</h1>
+    <h2>Programming</h2>
             <ul class="post__list">
-                {%- for plant in collections.plants | reverse -%}
+                {%- for plant in collections.programming | reverse -%}
+                            <li
+                                class="post__list__el"
+                            >
+                                <div class="post__date">
+                                    {{plant.data.dateDisplay}}
+                                </div>
+                                <h3>
+                                <a href="{{plant.url}}">{{plant.data.title}}</a>
+                                </h3>
+                               {{plant.data.excerpt}}
+                            </li>
+
+                {%- endfor -%}
+            </ul>
+
+    <h2>Thoughts</h2>
+            <ul class="post__list">
+                {%- for plant in collections.thoughts | reverse -%}
                             <li
                                 class="post__list__el"
                             >
