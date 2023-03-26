@@ -18,9 +18,17 @@
     {% include '_navigation.njk' %}
     <main>
        <div class="post-content container">
-        <div class="post__date">
-  {{dateDisplay}}
-</div>
+        <p class="post__date">
+  Planted on: {{dateDisplay}}
+</p>
+{% if stage %}
+{% if stage === "seedling" %}
+{% set icon = '🌱' %}
+{% endif %}
+<p class="stage">
+  {{ icon }} seedling
+</p>
+{% endif %}
         {{content | safe}}
        </div>
     </main>
