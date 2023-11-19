@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Web Component</title>
+    <meta name="description" content="AAA">
+    <link rel="stylesheet" href="/assets/css/global.css">
+      <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png"/>
+    <link rel="canonical" href="https://jakubiwanowski.dev/garden/programming/upload-web-component/">
+    <link rel="me" href="https://fosstodon.org/@dzajew">
+    
+        <link href="/assets/css/highlight/shades-of-purple.css" rel="stylesheet">
+        
+</head>
+<body>
+    <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <ul class="nav__list">
+  <li class="nav__list__el">
+    <a href="/" class="nav__list__link ">Home</a>
+  </li>
+  <li class="nav__list__el">
+    <a href="/garden/" class="nav__list__link active">Garden</a>
+  </li>
+  <li class="nav__list__el">
+    <a href="/contact/" class="nav__list__link ">Contact</a>
+  </li>
+  <li class="nav__list__el">
+    <a href="/garden/paths.rss" class="nav__list__link ">RSS</a>
+  </li></ul>
+      </nav>
+    </div>
+</header>
+
+    <main>
+       <div class="post-content container">
+        <p class="post__date">
+  Planted on: 21-11-2023
+</p>
+
+        <h1>File Upload Web Component</h1>
+<p>I've noticed that a lot of people in my Mastodon feed have been talking about web components recently. To mention just a few:</p>
+<ul>
+<li><a href="https://www.zachleat.com/web/?category=web-components">Zach Leatherman has a couple of posts</a></li>
+<li><a href="https://www.oddbird.net/2023/11/17/components/">HTML Web Components are Just JavaScript?</a> by Miriam Suzanne</li>
+<li><a href="https://blog.jim-nielsen.com/tags/#webComponents">Jim Nielsen's posts about web components</a></li>
+<li><a href="https://meyerweb.com/eric/thoughts/2023/11/01/blinded-by-the-light-dom/">Blinded By the Light DOM</a> by Eric Meyer</li>
+<li><a href="https://buttondown.email/cascade/archive/005-why-web-components/">And Robin Rendel writes about web components too</a></li>
+</ul>
+<p>I'be heard about web components before, but I didn't have chance to use them in my work, so I wanted to check, what can be built with them. I decided to go with a file upload component, that has a file preview. Here's HTML markup:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>custom-upload</span> <span class="token attr-name">maxsize</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1000000<span class="token punctuation">"</span></span> <span class="token attr-name">nojs</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> Upload your profile picture <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file-name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preview<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>custom-upload</span><span class="token punctuation">></span></span></code></pre>
+<p>Our custom element tag has two attributes set at start: <code>maxsize</code>, and <code>nojs</code>. I'll talk more about them later. <code>.file </code> holds label and input, the main parts of the component. <code>.error</code> is where we'll display errors if something goes wrong, while uploading a file; <code>.preview</code>, here we'll display our image before uploading it to a server. Now let's discuss the styling.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">custom-upload</span> <span class="token punctuation">{</span><br>  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span><br>  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span><br>  <span class="token property">--radius</span><span class="token punctuation">:</span> 8px<span class="token punctuation">;</span><br>  <span class="token property">font-size</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.file</span> <span class="token punctuation">{</span><br>  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span><br>  <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span><br>  <span class="token property">gap</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span><br>  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span><br>  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span><br>  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">max</span><span class="token punctuation">(</span>10em<span class="token punctuation">,</span> 20vmin<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">max</span><span class="token punctuation">(</span>10em<span class="token punctuation">,</span> 20vmin<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">label[for="file"]</span> <span class="token punctuation">{</span><br>  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span><br>  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><br>  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><br>  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>  <span class="token property">background-color</span><span class="token punctuation">:</span> #9bb5f3<span class="token punctuation">;</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #000000<span class="token punctuation">;</span><br>  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><br>  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span><br>  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><br>  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><br>  <span class="token property">padding</span><span class="token punctuation">:</span> 0 10px<span class="token punctuation">;</span><br>  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span><br>  <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--radius<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">font-size</span><span class="token punctuation">:</span> 1.2em<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">label[for="file"]:hover</span> <span class="token punctuation">{</span><br>  <span class="token property">background-color</span><span class="token punctuation">:</span> #6fe594<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">custom-upload[nojs] label</span> <span class="token punctuation">{</span><br>  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">input[type="file"]</span> <span class="token punctuation">{</span><br>  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>  <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--radius<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">input[type="file"]:focus</span> <span class="token punctuation">{</span><br>  <span class="token property">outline</span><span class="token punctuation">:</span> 2px solid #000<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.preview</span> <span class="token punctuation">{</span><br>  <span class="token property">max-width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>  <span class="token property">margin</span><span class="token punctuation">:</span> 1em auto 0<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.file-name</span> <span class="token punctuation">{</span><br>  <span class="token property">padding</span><span class="token punctuation">:</span> 10px 0<span class="token punctuation">;</span><br>  <span class="token property">font-size</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span><br>  <span class="token property">line-height</span><span class="token punctuation">:</span> 1.2<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.file-name:empty</span> <span class="token punctuation">{</span><br>  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.error</span> <span class="token punctuation">{</span><br>  <span class="token property">padding</span><span class="token punctuation">:</span> 10px 0<span class="token punctuation">;</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><br>  <span class="token property">font-size</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span><br>  <span class="token property">line-height</span><span class="token punctuation">:</span> 1.2<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.error:empty</span> <span class="token punctuation">{</span><br>  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>Just some basic styles. We hide the input behind the label, but we still want to show user, if the input is in a focused state.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">custom-upload[nojs] label</span> <span class="token punctuation">{</span><br>  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>If the user turns off JavaScript, or JS fails to load/work for some reason, we want to show our input. The neat part in web components is that you can use custom tags, and standard HTML tags will load just normally, if we don't use JS to show them.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">CustomUpload</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> observedAttributes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"imagesrc"</span><span class="token punctuation">,</span> <span class="token string">"filename"</span><span class="token punctuation">,</span> <span class="token string">"error"</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>input <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>img <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"img"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>filename <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">".file-name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>error <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">".error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>maxSize <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"maxsize"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>mappedAttributes <span class="token operator">=</span> <span class="token punctuation">{</span><br>      <span class="token literal-property property">imagesrc</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>        <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">,</span><br>          <span class="token literal-property property">innerHTML</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>          <span class="token literal-property property">attribute</span><span class="token operator">:</span> <span class="token string">"src"</span><span class="token punctuation">,</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>      <span class="token punctuation">}</span><span class="token punctuation">,</span><br>      <span class="token literal-property property">filename</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>        <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>filename<span class="token punctuation">,</span><br>          <span class="token literal-property property">innerHTML</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>      <span class="token punctuation">}</span><span class="token punctuation">,</span><br>      <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>        <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>error<span class="token punctuation">,</span><br>          <span class="token literal-property property">innerHTML</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>      <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br>  <span class="token function">connectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span><span class="token string">"nojs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>input<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"change"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"error"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>      <span class="token keyword">const</span> files <span class="token operator">=</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>files<span class="token punctuation">;</span><br>      <span class="token keyword">const</span> isValid <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span><span class="token punctuation">;</span><br>      <span class="token keyword">if</span> <span class="token punctuation">(</span>isValid<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onUpload</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span><span class="token punctuation">;</span><br>      <span class="token punctuation">}</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br>  <span class="token function">attributeChangedCallback</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> newValue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>mappedAttributes<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">const</span> mapped <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>mappedAttributes<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">;</span><br>      <span class="token keyword">const</span> target <span class="token operator">=</span> mapped<span class="token punctuation">.</span>target<span class="token punctuation">.</span>name<span class="token punctuation">;</span><br><br>      mapped<span class="token punctuation">.</span>target<span class="token operator">?.</span>innerHTML<br>        <span class="token operator">?</span> <span class="token punctuation">(</span>target<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> newValue<span class="token punctuation">)</span><br>        <span class="token operator">:</span> target<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span>mapped<span class="token punctuation">.</span>target<span class="token punctuation">.</span>attribute<span class="token punctuation">,</span> newValue<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br>  <span class="token function">onUpload</span><span class="token punctuation">(</span><span class="token parameter">files</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">const</span> imageSrc <span class="token operator">=</span> <span class="token constant">URL</span><span class="token punctuation">.</span><span class="token function">createObjectURL</span><span class="token punctuation">(</span>files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">const</span> fileName <span class="token operator">=</span> files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"filename"</span><span class="token punctuation">,</span> <span class="token string">"Uploaded file: "</span> <span class="token operator">+</span> fileName<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"imagesrc"</span><span class="token punctuation">,</span> imageSrc<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br>  <span class="token function">validate</span><span class="token punctuation">(</span><span class="token parameter">files</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">const</span> file <span class="token operator">=</span> files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span>file<span class="token punctuation">.</span>size <span class="token operator">></span> <span class="token keyword">this</span><span class="token punctuation">.</span>maxSize<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"error"</span><span class="token punctuation">,</span> <span class="token string">"File's weight shouldn't exceed 1 MB"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br>customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"custom-upload"</span><span class="token punctuation">,</span> CustomUpload<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>We define observable attributes in <code>static observedAttributes = [&quot;imagesrc&quot;, &quot;label&quot;,&quot;error&quot;];</code>. Later, we assign HTML elements to class fields. Then, we define a <code>mappedAttributes</code> field, which will be helpful in updating our component. Web components have different lifecylce callbacks, they're quite nicely described on <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements">MDN's website</a>. In this example, we'll be using <code>connectedCallback()</code>, which is run, when a component is added to the document, and <code>attributeChangedCallback()</code>, fired when one of the observedAttributes changes.</p>
+<p>In the connectedCallback we remove <code>nojs</code> attribute, so our component is still usable, if JavaScript fails us. Then, we add onchange event listener to our input. First, we validate the file with <code>validate()</code> method, and only if file's weight doesn't exceed the value set in <code>maxsize</code> attriubte, we handle the upload with <code>onUpload()</code> method, set previews source, and display uploaded file's name. But how do we update and pass component's attributes to HTML elements?</p>
+<p><code>attributeChangedCallback()</code> fires whenever one of the attributes in <code>observedAttributes</code> changes. It takes three arguments: name of the changed attribute, attribute's old value, and attribute's new value. Inside the callback define, what we want to do with these values. Since I'm a lazy potato, I wanted to simplify the process, or at least make it automated.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">this</span><span class="token punctuation">.</span>mappedAttributes <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token literal-property property">imagesrc</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">,</span><br>      <span class="token literal-property property">innerHTML</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>      <span class="token literal-property property">attribute</span><span class="token operator">:</span> <span class="token string">"src"</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">filename</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>filename<span class="token punctuation">,</span><br>      <span class="token literal-property property">innerHTML</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>error<span class="token punctuation">,</span><br>      <span class="token literal-property property">innerHTML</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p><code>mappedAttributes</code> is an object holding observed attributes, and target HTML elements, which should change if one of the attributes changes. It also holds information whether we should update target's innerHTML/attribute.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>mappedAttributes<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">const</span> mapped <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>mappedAttributes<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">;</span><br>  <span class="token keyword">const</span> target <span class="token operator">=</span> mapped<span class="token punctuation">.</span>target<span class="token punctuation">.</span>name<span class="token punctuation">;</span><br><br>  mapped<span class="token punctuation">.</span>target<span class="token operator">?.</span>innerHTML<br>    <span class="token operator">?</span> <span class="token punctuation">(</span>target<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> newValue<span class="token punctuation">)</span><br>    <span class="token operator">:</span> target<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span>mapped<span class="token punctuation">.</span>target<span class="token punctuation">.</span>attribute<span class="token punctuation">,</span> newValue<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>First, we check if a given attribute is mapped, if yes, we get the target element, in this case I assigned targets to class fields. If <code>target.innerHTML</code> is set to true, we update HTML element's innerHTML, otherwise, we update element's attribute. Here's the finished component:</p>
+<custom-upload maxsize="1000000" nojs>
+ <div class="file">
+   <label for="file">
+     Upload your profile picture
+   </label>
+   <input type="file" name="file" id="file">
+ </div>
+  <p class="error"></p>
+  <p class="file-name"></p>
+    <img src="" alt="" class="preview">
+ </custom-upload>
+<p>And that's it. If we wanted to use it in production, we'd have to tweak the styles, probably connect the component to a form etc. If you want to read more about web components, I'd recommend one of the links mentioned at the beginning of this post, MDN pages, or <a href="https://htmlwithsuperpowers.netlify.app/">HTML with Superpowers website</a>. If you want to play with the File Upload Component, <a href="https://codepen.io/dzajew/pen/QWYQOvq">here's a Codepen link</a>.</p>
+<p>Comments? Feel free to <a href="/contact">contact me</a>.</p>
+<style>
+custom-upload {
+display:block;
+margin: 0 auto;
+--radius: 8px;
+font-size: 1rem;
+}
+.file {
+display:flex;
+flex-direction: column;
+gap:1em;
+margin:0 auto;
+position:relative;
+width:max(10em,20vmin);
+height:max(10em,20vmin);
+  }
+label[for="file"] {
+position: absolute;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background-color: #9BB5F3;
+color:#000000;
+text-align:center;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:0 10px;
+cursor:pointer;
+border-radius: var(--radius);
+font-size: 1.2em;
+}
+label[for="file"]:hover {
+background-color: #6FE594;
+}
+custom-upload[nojs] label {
+position: relative;
+}
+input[type="file"] {
+width:100%;
+height:100%;
+border-radius: var(--radius);
+}
+input[type="file"]:focus {
+outline: 2px solid #000;
+}
+.preview {
+max-width:100%;
+margin: 1em auto 0;
+}
+.file-name {
+  padding: 10px 0;
+  font-size: 1em;
+  line-height:1.2;
+}
+.file-name:empty {
+  display: none;
+}
+.error {
+padding: 10px 0;
+color: red;
+font-size: 1em;
+line-height: 1.2;
+}
+.error:empty {
+display: none;
+}
+</style>
+<script>
+class CustomUpload extends HTMLElement {
+  static observedAttributes = ["imagesrc", "filename","error"];
+  constructor() {
+    super();
+    this.input = this.querySelector("input");
+    this.img = this.querySelector("img");
+    this.filename = this.querySelector(".file-name");
+    this.error = this.querySelector(".error");
+    this.maxSize = this.getAttribute("maxsize");
+    this.mappedAttributes = {
+      imagesrc : {
+        default: '',
+        target: {
+          name: this.img,
+          innerHTML: false,
+          attribute: 'src'
+        }
+      },
+      filename : {
+        default: '',
+        target: {
+          name: this.filename,
+          innerHTML: true,
+        }
+      },
+      error : {
+        default: '',
+        target: {
+          name: this.error,
+          innerHTML: true,
+        }
+      },
+    } 
+  }
+  connectedCallback() {
+    this.removeAttribute("nojs");
+    this.input.addEventListener('change',(e)=>{
+      this.setAttribute('error', '');
+      const files = e.target.files
+      const isValid = this.validate(files);
+      if(isValid) {
+        this.onUpload(files);  
+      }
+    })
+  }
+  attributeChangedCallback(name, oldValue, newValue) {
+    if(this.mappedAttributes[name]) {
+
+      const mapped = this.mappedAttributes[name];
+      const target = mapped.target.name;
+
+      mapped.target?.innerHTML ? target.innerHTML = newValue : target.setAttribute(mapped.target.attribute, newValue);
+    }
+  }
+  onUpload(files) {
+    const imageSrc = URL.createObjectURL(files[0]);
+    const fileName = files[0].name;
+    this.setAttribute('filename', "Uploaded file: " + fileName);
+    this.setAttribute('imagesrc',imageSrc);
+  }
+  validate(files) {
+    const file = files[0];
+    if(file.size > this.maxSize) {
+      this.setAttribute("error", "File's weight shouldn't exceed 1 MB")
+      return false;
+    }
+    return true;
+  }
+}
+customElements.define("custom-upload", CustomUpload);
+</script>
+
+       </div>
+    </main>
+    
+</body>
+</html>
