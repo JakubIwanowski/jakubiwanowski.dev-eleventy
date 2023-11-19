@@ -1,12 +1,12 @@
 ---
 meta:
   title: "File Upload Web Component"
-  description: "AAA"
+  description: "Where I try myself at web components art."
 date: 2023-11-21
 dateDisplay: 21-11-2023
 title: "File Upload Web Component"
 highlighter: true
-excerpt: "The first part of my beginner's guide to Eleventy"
+excerpt: "Where I try myself at web components art."
 ---
 
 # File Upload Web Component
