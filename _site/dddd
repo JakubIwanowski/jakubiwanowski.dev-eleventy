@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom file upload</title>
+    <meta name="description" content="AAA">
+    <link rel="stylesheet" href="/assets/css/global.css">
+      <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png"/>
+    <link rel="canonical" href="https://jakubiwanowski.dev/dddd">
+    <link rel="me" href="https://fosstodon.org/@dzajew">
+    
+        <link href="/assets/css/highlight/shades-of-purple.css" rel="stylesheet">
+        
+</head>
+<body>
+    <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <ul class="nav__list">
+  <li class="nav__list__el">
+    <a href="/" class="nav__list__link ">Home</a>
+  </li>
+  <li class="nav__list__el">
+    <a href="/garden/" class="nav__list__link ">Garden</a>
+  </li>
+  <li class="nav__list__el">
+    <a href="/contact/" class="nav__list__link ">Contact</a>
+  </li>
+  <li class="nav__list__el">
+    <a href="/garden/paths.rss" class="nav__list__link ">RSS</a>
+  </li></ul>
+      </nav>
+    </div>
+</header>
+
+    <main>
+       <div class="post-content container">
+        <p class="post__date">
+  Planted on: 21-11-2023
+</p>
+
+        <p>ddd</p>
+
+       </div>
+    </main>
+    
+</body>
+</html>

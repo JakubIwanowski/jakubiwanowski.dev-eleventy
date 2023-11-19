@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container padding</title>
+    <meta name="description" content="One more way set padding on your container">
+    <link rel="stylesheet" href="/assets/css/global.css">
+      <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png"/>
+    <link rel="canonical" href="https://jakubiwanowski.dev/garden/snippets/container-padding/">
+    <link rel="me" href="https://fosstodon.org/@dzajew">
+    
+        <link href="/assets/css/highlight/shades-of-purple.css" rel="stylesheet">
+        
+</head>
+<body>
+    <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <ul class="nav__list">
+  <li class="nav__list__el">
+    <a href="/" class="nav__list__link ">Home</a>
+  </li>
+  <li class="nav__list__el">
+    <a href="/garden/" class="nav__list__link active">Garden</a>
+  </li>
+  <li class="nav__list__el">
+    <a href="/contact/" class="nav__list__link ">Contact</a>
+  </li>
+  <li class="nav__list__el">
+    <a href="/garden/paths.rss" class="nav__list__link ">RSS</a>
+  </li></ul>
+      </nav>
+    </div>
+</header>
+
+    <main>
+       <div class="post-content container">
+        <p class="post__date">
+  Planted on: 01-11-2023
+</p>
+
+
+
+
+<p class="status">
+  🌱 seedling
+</p>
+
+        <h1>Container padding</h1>
+<p>Quick snippet for setting container padding with CSS variables.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">{</span><br>  <span class="token property">--width</span><span class="token punctuation">:</span> 56.25rem<span class="token punctuation">;</span><br>  <span class="token property">--padding</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span><br>  <span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--width<span class="token punctuation">)</span> + 2 * <span class="token function">var</span><span class="token punctuation">(</span>--padding<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span><br>  <span class="token property">padding</span><span class="token punctuation">:</span> 0 <span class="token function">var</span><span class="token punctuation">(</span>--padding<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+
+       </div>
+    </main>
+    
+</body>
+</html>
