@@ -20,16 +20,16 @@
       <nav class="nav">
         <ul class="nav__list">
   <li class="nav__list__el">
-    <a href="/" class="nav__list__link ">Home</a>
+    <a href="/" class="contrast-link header__link ">Home</a>
   </li>
   <li class="nav__list__el">
-    <a href="/garden/" class="nav__list__link active">Garden</a>
+    <a href="/garden/" class="contrast-link header__link active">Garden</a>
   </li>
   <li class="nav__list__el">
-    <a href="/contact/" class="nav__list__link ">Contact</a>
+    <a href="/contact/" class="contrast-link header__link ">Contact</a>
   </li>
   <li class="nav__list__el">
-    <a href="/garden/paths.rss" class="nav__list__link ">RSS</a>
+    <a href="/garden/paths.rss" class="contrast-link header__link ">RSS</a>
   </li></ul>
       </nav>
     </div>
@@ -40,6 +40,8 @@
         <p class="post__date">
   Planted on: 09-01-2023
 </p>
+
+<div class="stage">🌿 Budding</div>
 
         <h1>A Beginner's Guide to Eleventy - part one</h1>
 <p>Recently I've moved my blog from Remix to Eleventy. I really like Remix, and I think it's a great tool but it felt like an overkill for a simple site like this.</p>
@@ -64,7 +66,7 @@ For now the output page doesn't differ much from our source file. Let's add some
 <pre class="language-njk"><code class="language-njk"><span class="token operator">&lt;</span>!<span class="token variable">DOCTYPE</span> <span class="token variable">HTML</span><span class="token operator">></span><br><span class="token operator">&lt;</span><span class="token variable">html</span> <span class="token variable">lang</span><span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span><br><span class="token operator">&lt;</span><span class="token variable">head</span><span class="token operator">></span><br>	<span class="token operator">&lt;</span><span class="token variable">meta</span> <span class="token variable">charset</span><span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span><br>    <span class="token operator">&lt;</span><span class="token variable">meta</span> <span class="token variable">name</span><span class="token operator">=</span><span class="token string">"viewport"</span> <span class="token variable">content</span><span class="token operator">=</span><span class="token string">"width=device-width, initial-scale=1.0"</span><span class="token operator">></span><br>	<span class="token operator">&lt;</span><span class="token variable">title</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token variable">title</span><span class="token operator">></span><br><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token variable">head</span><span class="token operator">></span><br><span class="token operator">&lt;</span><span class="token variable">body</span><span class="token operator">></span><br>    <span class="token punctuation">{</span><span class="token operator">%</span> <span class="token variable">include</span> <span class="token string">'_navigation.njk'</span> <span class="token operator">%</span><span class="token punctuation">}</span><br><span class="token operator">&lt;</span><span class="token variable">main</span><span class="token operator">></span><br><span class="token operator">&lt;</span><span class="token variable">h1</span><span class="token operator">></span><br><span class="token variable">My</span> <span class="token variable">awesome</span> <span class="token variable">website</span><br><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token variable">h1</span><span class="token operator">></span><br><span class="token operator">&lt;</span><span class="token variable">p</span><span class="token operator">></span><br><span class="token variable">A</span> <span class="token variable">paragraph</span><br><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token variable">p</span><span class="token operator">></span><br><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token variable">main</span><span class="token operator">></span><br><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token variable">body</span><span class="token operator">></span><br><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token variable">html</span><span class="token operator">></span></code></pre>
 <p>Now we have navigation on our home page, great. If we're creating a blog, some posts would be nice. There are a few ways of fetching data in Eleventy. For now, I'd like to focus on some basic setup. Create <strong>_posts</strong> folder. Create two or three sample posts inside it:</p>
 <pre class="language-yaml"><code class="language-yaml"><span class="token punctuation">---</span><br><span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2022-11-10</span><br><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">'Example post'</span><br><span class="token key atrule">excerpt</span><span class="token punctuation">:</span> <span class="token string">'Example excerpt'</span><br><span class="token punctuation">---</span></code></pre>
-<p><strong>Edit</strong>: This is front matter. I haven't explained what it is in the previous version of the post, but I've written a bit more about this topic <a href="/garden/programming/eleventy-guide-part-two#front-matter">in the next part of the guide</a><br>
+<p><strong>Edit</strong>: This is front matter. I haven't explained what it is in the previous version of the post, but I've written a bit more about this topic <a href="/garden/eleventy-guide-part-two#front-matter">in the next part of the guide</a><br>
 Add <em><strong>_posts.json</strong></em> to our folder holding posts:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"permalink"</span><span class="token operator">:</span> <span class="token string">"/blog/{{ page.fileSlug }}/index.html"</span><span class="token punctuation">,</span><br>  <span class="token property">"tags"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"posts"</span><span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
 <p>&quot;permalink&quot; tells Eleventy where output files should placed. In this case it's: <em>/blog/file-slug/index.html</em>. If a post file is named <strong>my-first-post.md</strong>, the output will be: <em>/blog/my-first-post/index.html</em>. &quot;tags&quot; field assigns files to collections. One file can belong to more than one collection. That's how we can list our posts anywhere we want. Now let's fetch them on our homepage, in index.njk:</p>
@@ -79,6 +81,22 @@ Just add link to the stylesheet in the <code>&lt;head&gt;</code></p>
 
        </div>
     </main>
+    <footer class="footer">
+<div class="container">  
+<p class="footer__heading">
+Miscellaneous
+</p>
+<nav>
+<ul class="footer__nav-list">
+<li>
+<a href="/stages" class="contrast-link footer__link">
+Stages
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</footer>    
     
 </body>
 </html>

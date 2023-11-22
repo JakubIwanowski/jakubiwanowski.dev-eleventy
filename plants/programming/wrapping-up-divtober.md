@@ -7,6 +7,7 @@ dateDisplay: 03-11-2022
 title: "Wrapping Up Divtober"
 slug: "wrapping-up-divtober"
 excerpt: "CSS is fun, and divtober was fun. A short summary"
+stage: "Evergreen"
 ---
 
 #  Wrapping Up Divtober

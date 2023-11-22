@@ -7,6 +7,7 @@ dateDisplay: 02-10-2022
 title: "Divtober #1"
 slug: "divtober-badge"
 excerpt: "CSS is fun"
+stage: "Evergreen"
 ---
 
 #  Divtober

@@ -7,7 +7,7 @@ dateDisplay: 26-03-2023
 title: "Setting up a digital garden"
 slug: "setting-up-digital-garden"
 excerpt: "On how I decided to plant a digital garden"
-stage: "seedling"
+stage: "Seedling"
 ---
 
 # Setting up a digital garden
