@@ -22,16 +22,11 @@
   Planted on: {{dateDisplay}}
 </p>
 {% if stage %}
-{% if stage === "seedling" %}
-{% set icon = '🌱' %}
-{% endif %}
-<p class="stage">
-  {{ icon }} seedling
-</p>
+{% stageDisplay stage %}
 {% endif %}
         {{content | safe}}
        </div>
     </main>
-    
+    {% include '_footer.njk' %}    
 </body>
 </html>

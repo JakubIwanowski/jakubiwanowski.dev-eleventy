@@ -1,9 +1,11 @@
 @import "variables";
 @import "reset";
 @import "header";
+@import "footer";
 @font-face {
   font-family: "Space Mono";
-  src: url("../fonts/spacemono-bold-webfont.woff2") format("woff2"),
+  src:
+    url("../fonts/spacemono-bold-webfont.woff2") format("woff2"),
     url("../fonts/spacemono-bold-webfont.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -11,11 +13,16 @@
 }
 @font-face {
   font-family: "Figtree";
-  src: url(../fonts/figtree-regular-webfont.woff2) format("woff2"),
+  src:
+    url(../fonts/figtree-regular-webfont.woff2) format("woff2"),
     url(../fonts/figtree-regular-webfont.woff) format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+body {
+  display: flex;
+  flex-direction: column;
 }
 main {
   padding: 2em 0;
@@ -54,6 +61,20 @@ a {
   }
   &:hover {
     outline: 0.15em dotted var(--link-focus);
+  }
+}
+.contrast-link {
+  color: var(--background-color);
+  padding: 0.5em 0.7em;
+  text-decoration-color: var(--background-color);
+  &:hover {
+    background-color: var(--nav-hover-color);
+    outline: 0.15em dotted var(--background-color);
+  }
+
+  &.active {
+    background-color: var(--nav-hover-color);
+    outline: 0.15em dotted var(--background-color);
   }
 }
 .container {
@@ -98,6 +119,9 @@ a {
     --flow-space: 0.5em;
   }
 }
+.stage {
+  font-size: var(--font-1);
+}
 .post-content {
   .post__date {
     font-size: 1.5em;
@@ -130,6 +154,7 @@ a {
   }
 }
 .squares {
+  flex-shrink: 0;
   --size: 2.5rem;
   --color1: #31c9c6;
   --color2: #fcbb30;
@@ -179,8 +204,11 @@ a {
       var(--color5) 87.5%,
       var(--color5) 100%
     );
-  background-size: calc(var(--size) * 8) var(--size),
+  background-size:
+    calc(var(--size) * 8) var(--size),
     calc(var(--size) * 8) var(--size);
   background-repeat: repeat no-repeat;
-  background-position: 0 0, 0 var(--size);
+  background-position:
+    0 0,
+    0 var(--size);
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Upload Web Component</title>
-    <meta name="description" content="AAA">
+    <meta name="description" content="Where I try myself at web components art.">
     <link rel="stylesheet" href="/assets/css/global.css">
       <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png"/>
     <link rel="canonical" href="https://jakubiwanowski.dev/garden/programming/upload-web-component/">
@@ -20,16 +20,16 @@
       <nav class="nav">
         <ul class="nav__list">
   <li class="nav__list__el">
-    <a href="/" class="nav__list__link ">Home</a>
+    <a href="/" class="contrast-link header__link ">Home</a>
   </li>
   <li class="nav__list__el">
-    <a href="/garden/" class="nav__list__link active">Garden</a>
+    <a href="/garden/" class="contrast-link header__link active">Garden</a>
   </li>
   <li class="nav__list__el">
-    <a href="/contact/" class="nav__list__link ">Contact</a>
+    <a href="/contact/" class="contrast-link header__link ">Contact</a>
   </li>
   <li class="nav__list__el">
-    <a href="/garden/paths.rss" class="nav__list__link ">RSS</a>
+    <a href="/garden/paths.rss" class="contrast-link header__link ">RSS</a>
   </li></ul>
       </nav>
     </div>
@@ -38,8 +38,10 @@
     <main>
        <div class="post-content container">
         <p class="post__date">
-  Planted on: 21-11-2023
+  Planted on: 19-11-2023
 </p>
+
+<div class="stage">🌱 Seedling</div>
 
         <h1>File Upload Web Component</h1>
 <p>I've noticed that a lot of people in my Mastodon feed have been talking about web components recently. To mention just a few:</p>
@@ -222,6 +224,22 @@ customElements.define("custom-upload", CustomUpload);
 
        </div>
     </main>
+    <footer class="footer">
+<div class="container">  
+<p class="footer__heading">
+Miscellaneous
+</p>
+<nav>
+<ul class="footer__nav-list">
+<li>
+<a href="/stages" class="contrast-link footer__link">
+Stages
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</footer>    
     
 </body>
 </html>

@@ -7,6 +7,7 @@ dateDisplay: 19-11-2023
 title: "File Upload Web Component"
 highlighter: true
 excerpt: "Where I try myself at web components art."
+stage: "Seedling"
 ---
 
 # File Upload Web Component

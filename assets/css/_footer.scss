@@ -1,0 +1,15 @@
+.footer {
+  margin-block-start: auto;
+  padding: 32px 0;
+  color: var(--background-color);
+  background-color: hsl(287.1, 81.4%, 16.9%);
+}
+.footer__heading {
+  font-weight: bold;
+}
+.footer__nav-list {
+  list-style: none;
+}
+.footer__link {
+  font-size: var(--font-0);
+}
