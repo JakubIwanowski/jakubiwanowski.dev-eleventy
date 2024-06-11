@@ -7,6 +7,19 @@
       <description>The Digital Garden of Jakub Iwanowski</description>
       <language>en</language>
       <item>
+        <title>Learning Go</title>
+        <link>https://jakubiwanowski.dev/garden/programming/learning-go/</link>
+        <description>&lt;h1&gt;Learning Go&lt;/h1&gt;
+&lt;p&gt;While I was unemployed for a few months, I started a few personal projects, just something to spend my time on, while I was looking for a new job. At first, I wanted to make a CMS for eleventy, but somewher in the middle of work, I realized I needed a tool to manage database migrations. Of course, I haven&#39;t finished it yet, I still have to upload the latest changes, but you can have a peek &lt;a href=&quot;https://codeberg.org/dzajew/mariadb-migrator&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Some time later, I decided to learn a new language. After hesitating between Elixir and Go, I gave Go a go (pun intended). I went through &lt;a href=&quot;https://go.dev/learn/&quot;&gt;documentation, and the Tour of Go&lt;/a&gt;, and after doing some of the &lt;a href=&quot;https://gophercises.com/&quot;&gt;Gophercises&lt;/a&gt;, I started working on a &lt;a href=&quot;https://todotxt.org/&quot;&gt;todotxt.org&lt;/a&gt; CLI, but written in Go. I think, it&#39;s a good way to learn Go&#39;s standard library, you can check out the code, still in progress, &lt;a href=&quot;https://codeberg.org/dzajew/ggtd&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So far, I like golang. It&#39;s seems a lot like CSS, that is, easy to learn, hard to master. The basics are really simple, but I&#39;m aware, that it take some time, before I can say, that I know the language. Another thing I like about it is that it has a built in testing functionality, it&#39;s really neat!&lt;/p&gt;
+&lt;p&gt;Anyway, I hope, I&#39;ll manage to finish these two projects soon, especially, that I want to redesign this website. So many ideas, not enough time (and coffee).&lt;/p&gt;
+</description>
+        <pubDate>Tue Jun 11 2024 02:00:00 GMT+0200 (czas środkowoeuropejski letni)</pubDate>
+        <dc:creator>Jakub Iwanowski</dc:creator>
+        <guid>https://jakubiwanowski.dev/garden/programming/learning-go/</guid>
+      </item>
+      <item>
         <title>File Upload Web Component</title>
         <link>https://jakubiwanowski.dev/garden/programming/upload-web-component/</link>
         <description>&lt;h1&gt;File Upload Web Component&lt;/h1&gt;
