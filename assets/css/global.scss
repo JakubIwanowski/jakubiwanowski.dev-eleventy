@@ -4,8 +4,7 @@
 @import "footer";
 @font-face {
   font-family: "Space Mono";
-  src:
-    url("../fonts/spacemono-bold-webfont.woff2") format("woff2"),
+  src: url("../fonts/spacemono-bold-webfont.woff2") format("woff2"),
     url("../fonts/spacemono-bold-webfont.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -13,8 +12,7 @@
 }
 @font-face {
   font-family: "Figtree";
-  src:
-    url(../fonts/figtree-regular-webfont.woff2) format("woff2"),
+  src: url(../fonts/figtree-regular-webfont.woff2) format("woff2"),
     url(../fonts/figtree-regular-webfont.woff) format("woff");
   font-weight: 400;
   font-style: normal;
@@ -204,11 +202,8 @@ a {
       var(--color5) 87.5%,
       var(--color5) 100%
     );
-  background-size:
-    calc(var(--size) * 8) var(--size),
+  background-size: calc(var(--size) * 8) var(--size),
     calc(var(--size) * 8) var(--size);
   background-repeat: repeat no-repeat;
-  background-position:
-    0 0,
-    0 var(--size);
+  background-position: 0 0, 0 var(--size);
 }
