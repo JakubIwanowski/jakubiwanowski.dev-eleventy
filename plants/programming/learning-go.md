@@ -3,7 +3,7 @@ meta:
     title: "Learning Go"
     description: "Short post about learning golang"
 date: 2024-06-11
-dateDisplay: 11-06-20224
+dateDisplay: 11-06-2024
 title: "Learning Go"
 slug: "learning-go"
 excerpt: "A few words about Go, CSS"
